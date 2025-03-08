@@ -25,33 +25,21 @@ class WeatherModel {
     return weatherData;
   }
 
-  String getWeatherIcon(int condition) {
+  List<String> getWeatherIconAndComment(int condition) {
     if (condition < 400) {
-      return 'thunderstorm';
+      return ['thunderstorm', 'Thunderstorms are approaching.\nWatch out!'];
     } else if (condition < 600) {
-      return 'heavy_rain';
+      return ['heavy_rain', 'It\'s rainy.\nDon\'t forget an umbrella.'];
     } else if (condition < 700) {
-      return 'snowfall';
+      return ['snowfall', 'Snow is falling.\nWatch out for slippery roads.'];
     } else if (condition < 800) {
-      return 'foggy';
+      return ['foggy', 'It\'s foggy.\nBe careful when driving.'];
     } else if (condition == 800) {
-      return 'clear_sky';
+      return ['clear_sky', 'Time for shorts and t-shirts!'];
     } else if (condition <= 804) {
-      return 'cloudy';
+      return ['cloudy', 'It\'s cloudy, but don\'t worry.\nEvery cloud has a silver lining!'];
     } else {
-      return 'background1';
-    }
-  }
-
-  String getMessage(int temp) {
-    if (temp > 25) {
-      return 'It\'s time to eat ice cream';
-    } else if (temp > 20) {
-      return 'Time for shorts and t-shirts';
-    } else if (temp < 10) {
-      return 'You\'ll need a scarf and glove';
-    } else {
-      return 'Bring a coat just in case';
+      return ['background1', 'Unable to get weather data'];
     }
   }
 }

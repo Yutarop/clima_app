@@ -6,7 +6,6 @@ import 'package:clima_app/services/weather.dart';
 class LocationScreen extends StatefulWidget {
 
   final locationWeather;
-  
 
   LocationScreen({this.locationWeather});
 
@@ -38,9 +37,10 @@ class _LocationScreenState extends State<LocationScreen> {
       }
       double temp = weatherData['main']['temp'];
       temperature = temp.toInt();
-      comment = weather.getMessage(temperature!);
       var condition = weatherData['weather'][0]['id'];
-      weatherIcon = weather.getWeatherIcon(condition);
+      var weatherIconAndComment = weather.getWeatherIconAndComment(condition);
+      weatherIcon = weatherIconAndComment[0];
+      comment = weatherIconAndComment[1];
       cityName = weatherData['name'];
     });
   }
@@ -107,11 +107,22 @@ class _LocationScreenState extends State<LocationScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(right: 20.0),
-                child: Text(
-                  "$comment in $cityName!",
-                  textAlign: TextAlign.right,
-                  style: kMessageTextStyle,
+                padding: const EdgeInsets.only(right: 10.0),
+                child: Column(
+                  children: [
+                    Text(
+                      'Weather in $cityName',
+                      style: kCityNameTextStyle,
+                    ),
+                    SizedBox(
+                      height: 15.0,
+                    ),
+                    Text(
+                      '$comment',
+                      textAlign: TextAlign.right,
+                      style: kMessageTextStyle,
+                    ),
+                  ],
                 ),
               ),
             ],

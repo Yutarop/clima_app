@@ -7,7 +7,14 @@ const kTempTextStyle = TextStyle(
 
 const kMessageTextStyle = TextStyle(
   fontFamily: 'Spartan MB',
-  fontSize: 30.0,
+  fontSize: 20.0,
+);
+
+const kCityNameTextStyle = TextStyle(
+  fontFamily: 'Spartan MB',
+  fontSize: 25.0,
+  decoration: TextDecoration.underline,
+  color: Colors.white60
 );
 
 const kButtonTextStyle = TextStyle(
