@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:clima_app/services/location.dart';
-import 'package:clima_app/services/networking.dart';
 import 'location_screen.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:clima_app/services/weather.dart';

@@ -26,10 +26,8 @@ class WeatherModel {
   }
 
   String getWeatherIcon(int condition) {
-    if (condition < 300) {
+    if (condition < 400) {
       return '🌩';
-    } else if (condition < 400) {
-      return '🌧';
     } else if (condition < 600) {
       return '☔️';
     } else if (condition < 700) {
@@ -47,13 +45,13 @@ class WeatherModel {
 
   String getMessage(int temp) {
     if (temp > 25) {
-      return 'It\'s 🍦 time';
+      return 'It\'s time to eat ice cream';
     } else if (temp > 20) {
-      return 'Time for shorts and 👕';
+      return 'Time for shorts and t-shirts';
     } else if (temp < 10) {
-      return 'You\'ll need 🧣 and 🧤';
+      return 'You\'ll need a scarf and glove';
     } else {
-      return 'Bring a 🧥 just in case';
+      return 'Bring a coat just in case';
     }
   }
 }
