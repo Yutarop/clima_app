@@ -6,6 +6,7 @@ import 'package:clima_app/services/weather.dart';
 class LocationScreen extends StatefulWidget {
 
   final locationWeather;
+  
 
   LocationScreen({this.locationWeather});
 
@@ -50,7 +51,7 @@ class _LocationScreenState extends State<LocationScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/background1.jpg'),
+            image: AssetImage('images/$weatherIcon.jpg'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
                 Colors.white, BlendMode.dstATop),
@@ -98,21 +99,15 @@ class _LocationScreenState extends State<LocationScreen> {
               ),
               Padding(
                 padding: EdgeInsets.only(left: 15.0),
-                child: Row(
-                  children: <Widget>[
-                    Text(
-                      '$temperature°',
-                      style: kTempTextStyle,
-                    ),
-                    Text(
-                      weatherIcon ?? '🤷',
-                      style: kConditionTextStyle,
-                    ),
-                  ],
+                child: Center(
+                  child: Text(
+                    '$temperature°',
+                    style: kTempTextStyle,
+                  ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(right: 15.0),
+                padding: const EdgeInsets.only(right: 20.0),
                 child: Text(
                   "$comment in $cityName!",
                   textAlign: TextAlign.right,
